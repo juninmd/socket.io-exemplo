@@ -1,0 +1,25 @@
+<p>Batatinha</p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+<script>
+  var io = io("http://localhost:3001");
+
+  io.on('goku', function () {
+    alert('kamehameha');
+  })
+
+
+  io.on('batata', function () {
+    alert('upload concluído com sucesso!');
+  })
+
+  function talkei() {
+    console.log('log chamou talkei');
+    var id = io.id
+    console.log(id);
+    io.emit('talkei', 'a');
+  }
+</script>
+
+<button type="button" onclick="talkei()">TALKEI</button>
